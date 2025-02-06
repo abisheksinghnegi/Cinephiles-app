@@ -46,6 +46,15 @@
   display: inline-block;
 }
 
+
+.genrebtn{
+  transition: transform 0.3s ease;
+}
+
+.genrebtn:hover{
+  transform: scale(1.05);
+}
+
 input {
   padding: 10px;
   margin: 5px 0;
@@ -94,7 +103,7 @@ h2, h3, h4 {
 
 .cast-info {
   display: flex;
-  gap: 10px;
+  gap: 10px;  
   flex-wrap: wrap;
 }
 
@@ -108,6 +117,10 @@ h2, h3, h4 {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+}
+
+.actor-photo:hover{
+  background-color: #161616;
 }
 
 .movie-info {
@@ -125,6 +138,14 @@ h2, h3, h4 {
   display: flex;
   gap: 20px;
   margin-top: 20px;
+  border-bottom: 1px solid #e0e0e04c;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional, for better visual effect */
+  transition: transform 0.3s ease; /* Optional, for smooth hover effect */
+  padding-bottom: 20px;
+}
+
+.movie-detail:hover {
+  transform: scale(1.05); /* Optional, for zoom effect on hover */
 }
 
 .movie-poster {
@@ -158,10 +179,12 @@ h2, h3, h4 {
   width: 90px;
   margin-bottom: 9px;
   background-color: rgba(255, 0, 0, 0.815);
+  transition: transform 0.3s ease; 
 }
 
 #logoutbtn:hover {
   background-color: rgba(209, 209, 209, 0.349);
+  transform: scale(1.05);
 }
 
 #searchbar {
@@ -183,6 +206,10 @@ h2, h3, h4 {
   border-bottom-left-radius: 0%;
 }
 
+.buttons-container{
+  display: flex;
+}
+
 #trailerbtn {
   background-color: red;
   text-decoration: none;
@@ -193,6 +220,23 @@ h2, h3, h4 {
   align-items: center;
   border-radius: 5px;
   flex-direction: column-reverse;
+}
+
+#torrentbtn{
+  margin-left: 10px;
+  background-color:#f14e13;
+  text-decoration: none;
+  color: white;
+  height: 20px;
+  width: 148px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  flex-direction: column-reverse;
+}
+
+#torrentbtn:hover{
+  background-color: rgb(41, 41, 41);
 }
 
 #trailerbtn:hover {
@@ -206,11 +250,11 @@ h2, h3, h4 {
   }
 
   #searchbar {
-    width: 100%;
+    width: 70%;
   }
 
   #searchbtn {
-    width: 100%;
+    width: 20%;
   }
 
   .movie-detail {
@@ -229,15 +273,19 @@ h2, h3, h4 {
 
 @media screen and (max-width: 768px) {
   .movie-detail {
-    flex-direction: column;
+    
+    display: flex;
+    align-items: center;
+    
   }
 
   .movie-poster {
     width: 100%;
+    margin-left: 20px;
   }
 
   .movie-info {
-    margin-left: 0;
+    margin-left: 10px;
   }
 
   #heading {
@@ -272,13 +320,13 @@ h2, h3, h4 {
 
 @media screen and (max-width: 480px) {
   .login-container {
-    width: 90%;
+    width: 70%;
     height: auto;
     padding: 15px;
   }
 
   .genre-buttons button {
-    width: 100%;
+    width: 90%;
     margin-top: 10px;
   }
 
@@ -287,15 +335,15 @@ h2, h3, h4 {
   }
 
   .movie-poster img {
-    width: 80%;
+    width: 50%;
   }
 
   #searchbar {
-    width: 100%;
+    width: 70%;
   }
 
   #searchbtn {
-    width: 100%;
+    width: 20%;
   }
 
   .navbar {
@@ -304,8 +352,11 @@ h2, h3, h4 {
   }
 
   #logoutbtn {
-    width: 100%;
+    width: 16%;
+    height: 33px;
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
   }
 
   /* Adjust background when logged in */
@@ -315,3 +366,4 @@ h2, h3, h4 {
     padding: 20px 0;
   }
 }
+

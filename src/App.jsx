@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import bgvideo from '../src/assets/bg.mp4';
 
-
 // TMDb API key
 const apiKey = '94b1f21d4d882617dcdfbdb099ffd67c';
 
@@ -156,7 +155,6 @@ const App = () => {
 
   return (
     <div className="app-container">
-      {/* Conditionally render the video background */}
       {!isLoggedIn && (
         <div className="video-background">
           <video src={bgvideo} autoPlay loop muted playsInline className="background-video" />
@@ -170,12 +168,12 @@ const App = () => {
           <h2>CHOOSE YOUR GENRE</h2>
           {!genre ? (
             <div className="genre-buttons">
-              <button onClick={() => handleLogin('horror')}>Login for Horror Movies</button>
-              <button onClick={() => handleLogin('action')}>Login for Action Movies</button>
-              <button onClick={() => handleLogin('drama')}>Login for Drama Movies</button>
-              <button onClick={() => handleLogin('thriller')}>Login for Thriller Movies</button>
-              <button onClick={() => handleLogin('comedy')}>Login for Comedy Movies</button>
-              <button onClick={() => handleLogin('historical')}>Login for Historical Movies</button>
+              <button className='genrebtn' onClick={() => handleLogin('horror')}>Login for Horror Movies</button>
+              <button className='genrebtn' onClick={() => handleLogin('action')}>Login for Action Movies</button>
+              <button className='genrebtn' onClick={() => handleLogin('drama')}>Login for Drama Movies</button>
+              <button className='genrebtn' onClick={() => handleLogin('thriller')}>Login for Thriller Movies</button>
+              <button className='genrebtn' onClick={() => handleLogin('comedy')}>Login for Comedy Movies</button>
+              <button className='genrebtn' onClick={() => handleLogin('historical')}>Login for Historical Movies</button>
             </div>
           ) : (
             <div>
@@ -266,7 +264,17 @@ const App = () => {
                         </div>
                         <br />
 
-                        <a id='trailerbtn' href={trailers[movie.id]} target="_blank" rel="noopener noreferrer">Watch Trailer</a>
+                        <div className="buttons-container">
+                          <a id='trailerbtn' href={trailers[movie.id]} target="_blank" rel="noopener noreferrer">Watch Trailer
+                          </a>
+                          <a
+                          id='torrentbtn'
+                          href={`https://www.1377x.to/search/${encodeURIComponent(movie.title)}/1/`}
+                          target="_blank"
+                          rel="noopener noreferrer">
+                          Download Torrent
+                          </a>
+                        </div>
                       </div>   
                     </div>
                   </li>
