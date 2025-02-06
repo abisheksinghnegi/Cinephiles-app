@@ -1,0 +1,317 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.video-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Keep it behind the login div */
+}
+
+.hidden {
+  display: none; /* Hide the video when logged in */
+}
+
+.app-container {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+}
+
+.login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  z-index: 1; /* Ensure the login div stays above the video */
+  text-align: center;
+  width: 450px;
+  backdrop-filter: blur(3px) saturate(180%);
+  background-color: rgba(13, 13, 15, 0.437);
+  height: 60vh;
+}
+
+.genre-buttons {
+  margin-top: 20px;
+  height: 40vh;
+  width: 200px;
+  display: inline-block;
+}
+
+input {
+  padding: 10px;
+  margin: 5px 0;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+}
+
+.logininput {
+  padding: 10px;
+  margin: 5px 0;
+  width: 90%;
+  border: none;
+  border-radius: 5px;
+}
+
+.logininput:hover {
+  width: 92%;
+  background-color: rgba(13, 13, 15, 0.437);
+  color: white;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #79a5da29;
+  width: 200px;
+}
+
+button:hover {
+  background-color: #aeaeae7b;
+}
+
+h2, h3, h4 {
+  margin-bottom: 20px;
+}
+
+#cast {
+  margin-top: 10px;
+}
+
+.cast-info {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.actor {
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+}
+
+.actor-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.movie-info {
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.movie-poster img {
+  width: 100%;
+  border-radius: 10px;
+  margin-left: 30px;
+}
+
+.movie-detail {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.movie-poster {
+  width: 150px;
+}
+
+.movie-info {
+  flex: 1;
+}
+
+#loggedinbg {
+  background-color: #161616;
+  color: rgba(255, 255, 255, 0.74);
+  background-size: cover;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+#heading {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+#logoutbtn {
+  margin-left: 1100px;
+  width: 90px;
+  margin-bottom: 9px;
+  background-color: rgba(255, 0, 0, 0.815);
+}
+
+#logoutbtn:hover {
+  background-color: rgba(209, 209, 209, 0.349);
+}
+
+#searchbar {
+  width: 400px;
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
+  background-color: rgba(13, 13, 15, 0.437);
+  color: white;
+}
+
+#searchbar:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+#searchbtn {
+  width: 100px;
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+}
+
+#trailerbtn {
+  background-color: red;
+  text-decoration: none;
+  color: white;
+  height: 20px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  flex-direction: column-reverse;
+}
+
+#trailerbtn:hover {
+  background-color: rgb(41, 41, 41);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  #logoutbtn {
+    margin-left: 20px;
+  }
+
+  #searchbar {
+    width: 100%;
+  }
+
+  #searchbtn {
+    width: 100%;
+  }
+
+  .movie-detail {
+    flex-direction: column;
+  }
+
+  .movie-poster img {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .login-container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .movie-detail {
+    flex-direction: column;
+  }
+
+  .movie-poster {
+    width: 100%;
+  }
+
+  .movie-info {
+    margin-left: 0;
+  }
+
+  #heading {
+    margin-left: 10px;
+    font-size: 20px;
+  }
+
+  #logoutbtn {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .login-container {
+    width: 90%;
+    height: 80vh;
+  }
+
+  .genre-buttons {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hidden {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .login-container {
+    width: 90%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .genre-buttons button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .movie-detail {
+    flex-direction: column;
+  }
+
+  .movie-poster img {
+    width: 80%;
+  }
+
+  #searchbar {
+    width: 100%;
+  }
+
+  #searchbtn {
+    width: 100%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #logoutbtn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* Adjust background when logged in */
+  #loggedinbg {
+    background-size: cover;
+    background-position: center;
+    padding: 20px 0;
+  }
+}
